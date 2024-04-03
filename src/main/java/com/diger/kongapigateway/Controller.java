@@ -12,14 +12,23 @@ class Controller {
 
     private static final Logger log = LoggerFactory.getLogger(Controller.class);
 
+    @GetMapping
+    public String getUsersMockTT() {
+        System.out.println(LocalDateTime.now());
+        log.info(LocalDateTime.now().toString());
+        return "TEST!";
+    }
+
     @GetMapping("/api/v1/users")
     public String getUsersMock() {
+        System.out.println(LocalDateTime.now());
         log.info(LocalDateTime.now().toString());
         return "유저마이크로서비스 GET";
     }
 
     @GetMapping("/users")
     public String getUsers() {
+        System.out.println(LocalDateTime.now());
         log.info(LocalDateTime.now().toString());
         return "유저마이크로서비스 GET";
     }

@@ -2,6 +2,7 @@ version: "3.9"
 
 services:
   application:
+    restart: always
     networks:
       - kong-net
     container_name: user-service
@@ -12,6 +13,7 @@ services:
       - "8080:8080"
 
   kong:
+    restart: always
     networks:
       - kong-net
     image: kong
@@ -36,3 +38,4 @@ services:
 
 networks:
   kong-net:
+    external: true
